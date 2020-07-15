@@ -92,8 +92,8 @@ def main():
     for vertex in range(len(grafo.vertices)):
         if vertex not in ignore:
             depth_first_search = dfs(grafo, vertex, [])
-            if len(depth_first_search) > 1:
-                array_conexos.append(depth_first_search)
+            # if len(depth_first_search) > 1:
+            array_conexos.append(depth_first_search)
     
     end = time.time()
     end_time = datetime.datetime.now().time()
@@ -107,11 +107,11 @@ def main():
         num_cols.append(cols)
         count += 1
     
-    with open("quantidade_por_tamanho.csv", "w", newline="") as f:
+    with open("quantidade_por_tamanho_1.csv", "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerows(num_cols)
 
-    with open("out_ignoring.csv", "w", newline="") as f:
+    with open("out_ignoring_1.csv", "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerows(array_conexos)
 
